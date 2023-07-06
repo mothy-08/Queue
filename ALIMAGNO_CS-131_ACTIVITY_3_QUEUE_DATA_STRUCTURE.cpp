@@ -23,7 +23,6 @@ public:
         if (isFull()) 
         {
             std::cout << "Queue is full. Cannot add element." << std::endl;
-            system("pause");
             return;
         }
 
@@ -34,7 +33,6 @@ public:
         
         elements[rear] = data;
         std::cout << "Element " << data << " added to the queue." << std::endl;
-        system("pause");
     }
 
     void dequeue() 
@@ -42,7 +40,6 @@ public:
         if (isEmpty()) 
         {
             std::cout << "Queue is empty. Cannot delete element." << std::endl;
-            system("pause");
             return;
         }
 
@@ -54,7 +51,6 @@ public:
             front++;
         
         std::cout << "Element " << data << " deleted from the queue." << std::endl;
-        system("pause");
     }
 
     int searchElement(int data) 
@@ -62,7 +58,6 @@ public:
         if (isEmpty())
         {
             std::cout << "Queue is empty. Cannot search for element." << std::endl;
-            system("pause");
             return -1;
         }
 
@@ -71,12 +66,12 @@ public:
             if (elements[i] == data) 
             {
                 std::cout << "Element " << data << " found at index " << i << "." << std::endl;
-                system("pause");
                 return i;
             }
         }
+
         std::cout << "Element " << data << " not found in the queue." << std::endl;
-        system("pause");
+
         return -1;
     }
 
@@ -85,7 +80,6 @@ public:
         if (isEmpty())
         {
             std::cout << "Queue is empty. Nothing to display." << std::endl;
-            system("pause");
             return;
         }
 
@@ -95,8 +89,8 @@ public:
         {
             std::cout << elements[i] << " ";
         }
+
         std::cout << std::endl;
-        system("pause");
     }
 
     int getLargestElement() 
@@ -104,7 +98,6 @@ public:
         if (isEmpty()) 
         {
             std::cout << "Queue is empty. Cannot find the largest element." << std::endl;
-            system("pause");
             return -1;
         }
 
@@ -119,7 +112,7 @@ public:
         }
 
         std::cout << "The largest element in the queue is: " << largest << std::endl;
-        system("pause");
+
         return largest;
     }
 };
@@ -151,8 +144,6 @@ int main()
 
         }
 
-        system("cls");
-
         switch (choice) 
         {
         case 1:
@@ -160,12 +151,14 @@ int main()
             std::cout << "Enter the element to add: ";
             std::cin >> element;
             queue.enqueue(element);
+            system("pause");
             break;
         }
 
         case 2:
         {
             queue.dequeue();
+            system("pause");
             break;
         }
 
@@ -179,24 +172,28 @@ int main()
             {
                 std::cout << "Index of element " << element << " is " << index << "." << std::endl;
             }
+            system("pause");
             break;
         }
             
         case 4:
         {
             queue.display();
+            system("pause");
             break;
         }
             
         case 5:
         {
             queue.getLargestElement();
+            system("pause");
             break;
         }
 
         case 6:
         {
             std::cout << "Exiting the program..." << std::endl;
+            system("pause");
             break;
         }
         }
